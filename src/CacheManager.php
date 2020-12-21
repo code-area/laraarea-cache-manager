@@ -161,11 +161,11 @@ class CacheManager
         }
 
         if ($isUpdate) {
-            $data = self::{$dataMethod}(...$arguments);
+            $data = static::{$dataMethod}(...$arguments);
             Cache::set($cacheKey, $data, 24 * 60 * 60);
         } else {
             $data = Cache::remember($cacheKey, null, function () use ($dataMethod, $arguments) {
-                return self::{$dataMethod}(...$arguments);
+                return static::{$dataMethod}(...$arguments);
             });
         }
 
