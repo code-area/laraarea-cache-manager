@@ -20,7 +20,7 @@ class CacheManager
     /**
      * @var array
      */
-    private static $_cache = [];
+    protected static $_cache = [];
 
     /**
      * @var array
